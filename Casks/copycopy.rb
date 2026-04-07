@@ -1,6 +1,6 @@
 cask "copycopy" do
-  version "0.3.0"
-  sha256 "6202edca5556458b2ef306097001eb298e9c8286f035df71d5479cc8ac5529a0"
+  version "0.3.1"
+  sha256 "db24f7b37d291f64b138888d2dc224be6c40ff0c11d6c4e6f18c1b2303528157"
 
   url "https://github.com/mpuig/copycopy/releases/download/v#{version}/CopyCopy-v#{version}-macos.zip"
   name "CopyCopy"
@@ -10,6 +10,9 @@ cask "copycopy" do
   depends_on macos: ">= :sonoma"
 
   app "CopyCopy.app"
+
+  uninstall quit:   "com.copycopy.CopyCopy",
+            delete: "/Applications/CopyCopy.app"
 
   zap trash: [
     "~/.copycopy",
