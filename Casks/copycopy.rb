@@ -1,6 +1,6 @@
 cask "copycopy" do
   version "0.3.0"
-  sha256 "543d6122eea39e7e0124e4743f797c2fe7cc77d2c08dff16666dbe7db6eaa95a"
+  sha256 "6202edca5556458b2ef306097001eb298e9c8286f035df71d5479cc8ac5529a0"
 
   url "https://github.com/mpuig/copycopy/releases/download/v#{version}/CopyCopy-v#{version}-macos.zip"
   name "CopyCopy"
