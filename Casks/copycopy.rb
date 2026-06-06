@@ -1,21 +1,22 @@
 cask "copycopy" do
-  version "0.3.1"
-  sha256 "217c5b2d1506510f2832753747aa8b621d029c477ba5541d21a17c824ed13bda"
+  version "0.4.0"
+  sha256 "6ac7fe687fd374d51148be90b13f0dca97bea27cb24ba3573b8c6e936e1579c7"
 
-  url "https://github.com/mpuig/copycopy/releases/download/v#{version}/CopyCopy-v#{version}-macos.zip"
+  url "https://github.com/mpuig/CopyCopy/releases/download/v#{version}/CopyCopy-v#{version}-macos.zip"
   name "CopyCopy"
-  desc "Transform anything you copy"
-  homepage "https://github.com/mpuig/copycopy"
+  desc "Local action harness for your clipboard"
+  homepage "https://copycopy.app/"
 
-  depends_on macos: ">= :sonoma"
+  auto_updates true
+  depends_on macos: :sonoma
 
   app "CopyCopy.app"
 
-  uninstall quit:   "com.copycopy.CopyCopy",
-            delete: "/Applications/CopyCopy.app"
+  uninstall quit: "com.copycopy.CopyCopy"
 
   zap trash: [
     "~/.copycopy",
     "~/Library/Preferences/com.copycopy.CopyCopy.plist",
+    "~/Library/Saved Application State/com.copycopy.CopyCopy.savedState",
   ]
 end
